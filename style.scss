@@ -1,0 +1,125 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(49, 120, 185);
+}
+
+
+header {
+    background-color: white;
+    .header-wrapper {
+        max-width: 1200px;
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        div {
+            img {
+                width: 150px;
+                height: 50px;
+            }
+        }
+    }
+}
+
+.filter-button {
+    margin-top: 30px;
+    padding: 0 25px;
+    a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background-color: #1200ff;
+    padding: 16px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    border-radius: 50px;
+    font-size: 10px;
+    }
+}
+
+h1 {
+    font-size: 46px;
+    padding: 0 25px;
+}
+
+.course-banner {
+    .course-banner-wrapper {
+        padding: 0 25px;
+        .banner-info {
+            padding: 25px 10px 20px 20px;
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            .banner-name {
+                display: grid;
+                .purple-text {
+                    color: purple;
+                    font-size: 20px;
+                    font-weight: bold;
+
+                }
+                .black-text {
+                    color: black;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+            a {
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+        .banner-image {
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.program {
+    margin-top: 30px;
+    .program-wrapper {
+        background-color: white;
+        padding: 25px;
+        .program-image {
+            display: inline-block;
+            img {
+                width: 100%;
+                height: 80px;
+            }
+        }
+        .program-name {
+            font-size: 24px;
+            margin-bottom: 18px;
+            margin-top: 20px;
+        }
+        .program-info {
+
+        }
+        ul {
+            padding-left: 0;
+            .language {
+                display: inline-block;
+                background-image: url(https://i.pinimg.com/originals/a0/8f/44/a08f4469e0d5a851f91f1a5fc5805324.png);
+                background-size: 20px;
+                background-repeat: no-repeat;
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+            .time-of-day {
+                display: inline-block;
+                padding-left: 25px;
+                background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8fZ9jQp1osQZKJITA2yVG7uYxzGFNKPYSkA&s);
+                background-size: 15px;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+}
