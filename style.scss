@@ -7,6 +7,7 @@
 body {
     background-color: rgb(206, 206, 206);
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -19,10 +20,53 @@ header {
         display: flex;
         justify-content: space-between;
         background-color: white;
-        div {
+        .header-logo {
             img {
                 width: 150px;
                 height: 50px;
+            }
+        }
+        nav {
+            display: none;
+            @include breakpoints.xl {
+                display: flex;
+                gap: 28px;
+                align-items: center;
+                font-size: 14px;
+            }
+            a {
+                display: block;
+                text-decoration: none;
+                color: black;
+            }
+        }
+        .burger-menu {
+            @include breakpoints.xl {
+                display: none;
+            }
+            img {
+                width: 150px;
+                height: 50px;
+            }
+        }
+        .header-blue-button {
+            display: none;
+            @include breakpoints.xl {
+                display: block;
+                padding: 20px;
+                a {
+                    display: block;
+                    text-decoration: none;
+                    padding: 10px;
+                    width: 120px;
+                    background-color: #1200ff;
+                    color: white;
+                    border-radius: 50px;
+                    text-align: center;
+                    font-size: 10px;
+                    text-transform: uppercase;
+                    
+                }
             }
         }
     }
@@ -34,6 +78,9 @@ header {
     position: sticky;
     top: 20px;
     z-index: 2;
+    @include breakpoints.levels {
+        display: none;
+    }
     a {
     text-decoration: none;
     text-transform: uppercase;
@@ -90,9 +137,83 @@ h1 {
     }
 }
 
+
+
+
+.main-content-wrapper {
+    padding: 0 25px;
+    @include breakpoints.levels {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 20px;
+    }
+}
+
+
+.filters {
+    display: none;
+    @include breakpoints.levels {
+        background-color: white;
+        margin-top: 30px;
+        padding: 35px 33px;
+        display: grid;
+        align-self: start;
+        position: sticky;
+        top: 113px;
+        margin-bottom: 20px;
+        .filter-head {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+    }
+    .aside-wrapper {
+        
+    }
+    .filter-wrapper {
+        .filter-section {
+            margin-bottom: 10px;
+        }
+        select {
+            width: 160px;
+            border-radius: 50px;
+            padding: 6px;
+            margin-bottom: 10px;
+        }
+    }
+    .time {
+        .time-name {
+            margin-bottom: 10px;
+        }
+        .checkbox-wrapper {
+            margin-bottom: 10px;
+            input {
+                padding-right: 10px;
+            }
+            span {
+
+            }
+        }
+    }
+    a {
+        text-decoration: none;
+        padding: 10px;
+        width: 200px;
+        border: 1px solid blue;
+        border-radius: 50px;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 10px;
+        color: blue;
+    }
+}
 .program {
     margin-top: 30px;
-    padding: 0 25px;
+    @include breakpoints.levels {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
     .program-wrapper {
         background-color: white;
         padding: 25px;
@@ -103,10 +224,10 @@ h1 {
             font-size: 10px;
             padding: 12px 17px 11px;
             position: absolute;
-            right: 9px;
             text-align: center;
             text-transform: uppercase;
             border-radius: 50px;
+            margin: -6px 125px;
             color: white;
         }
         .program-image {
@@ -120,6 +241,7 @@ h1 {
             font-size: 24px;
             margin-bottom: 18px;
             margin-top: 20px;
+            font-weight: bold;
         }
         .program-info {
 
@@ -133,6 +255,7 @@ h1 {
                 background-repeat: no-repeat;
                 padding-left: 25px;
                 padding-right: 25px;
+                margin-bottom: 10px;
             }
             .time-of-day {
                 display: inline-block;
@@ -159,14 +282,26 @@ footer {
     grid-template-columns: 1fr 1fr;
     position: relative;
     overflow: hidden;
+    @include breakpoints.levels {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
     .footer-logo {
         display: none;
+        @include breakpoints.levels {
+            display: block;
+            margin-bottom: 50px;
+        }
     }
     .link-sections {
         display: grid;
         gap: 15px;
         padding-bottom: 40px;
         border-bottom: 1px solid #929497;
+        @include breakpoints.levels {
+            grid-column: 1;
+            border-bottom: none;
+        }
         a {
             text-decoration: none;
             color: #929497;
@@ -179,6 +314,11 @@ footer {
         gap: 15px;
         text-align: right;
         border-bottom: 1px solid #929497;
+        @include breakpoints.levels {
+            grid-column: 3;
+            border-bottom: none;
+            flex-direction: row;
+        }
         i {
 
         }
@@ -211,6 +351,10 @@ footer {
         font-size: 14px;
         border-bottom: 1px solid #929497;
         grid-column: 1 / 3;
+        @include breakpoints.levels {
+            grid-column: 3;
+            border-bottom: none;
+        }
         a {
             text-decoration: none;
             color: #929497;
@@ -219,6 +363,10 @@ footer {
     .copyright {
         padding: 40px 0;
         grid-column: 1 / 3;
+        @include breakpoints.levels {
+            grid-column: 1;
+            grid-row: 3;
+        }
         .copyright-name {
             padding-bottom: 20px;
             font-size: 14px;
@@ -237,6 +385,10 @@ footer {
             width: 200px;
             right: 13px;
             margin: -227px 17px;
+            @include breakpoints.levels {
+                width: 400px;
+                margin: -440px -128px;
+            }
         }
     }
 }
